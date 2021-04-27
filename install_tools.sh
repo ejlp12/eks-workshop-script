@@ -24,4 +24,14 @@ kubectl completion bash >>  ~/.bash_completion
 echo 'export LBC_VERSION="v2.0.0"' >>  ~/.bash_profile
 .  ~/.bash_profile
 
+# install eksctl
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.44.0/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp
+sudo mv -v /tmp/eksctl /usr/local/bin
+eksctl version
+
+eksctl completion bash >> ~/.bash_completion
+. /etc/profile.d/bash_completion.sh
+. ~/.bash_completion
+
+
 
